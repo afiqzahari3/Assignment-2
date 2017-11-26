@@ -10,7 +10,8 @@ public class client
 		StringBuffer instr = new StringBuffer();
 		String TimeStamp;
 		System.out.println("SocketClient Initialized");
-
+		
+		while(1){
 		try
 		{
 			InetAddress address = InetAddress.getByName(host);
@@ -30,7 +31,7 @@ public class client
 		
 		connection.close();
 		System.out.println(instr);
-}
+}}
 
 catch (IOException f)
 {

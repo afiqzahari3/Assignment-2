@@ -16,17 +16,21 @@ int main(){
 
 	serverAddr.sin_port = htons(7891);
 
-	serverAddr.sin_addr.s_addr = inet_addr("192.168.233.128");
+	serverAddr.sin_addr.s_addr = inet_addr("192.168.56.129");
 
 	memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);
 
 	addr_size = sizeof serverAddr;
+	while(1)
+	{
 
 	connect(clientSocket, (struct sockaddr *) &serverAddr, addr_size);
 
 	recv(clientSocket, buffer, 1024,0);
 
 	printf("Data received: %s", buffer);
+	}
+	
 
 	return 0;
 }
